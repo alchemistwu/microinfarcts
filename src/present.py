@@ -32,9 +32,9 @@ def mouse_click(event, x, y, flags, param):
         print("region:%d"%ann[index][click_point[1]][click_point[0]])
 
 def get_region_by_click():
-    f1 = open("../atlas_reference/atlas_plot.pickle", 'rb')
+    f1 = open(".." + os.sep + "atlas_reference" + os.sep + "atlas_plot.pickle", 'rb')
     plot = pk.load(f1)
-    f2 = open("../atlas_reference/atlas_dict.pickle", 'rb')
+    f2 = open(".." + os.sep + "atlas_reference" + os.sep + "atlas_dict.pickle", 'rb')
     ann = pk.load(f2)
     global index
 
@@ -99,7 +99,7 @@ def load_img(img_dir, post_fix):
 
     return image
 
-def merge_layers(name, postfix1='jpg', postfix2='tif', postfix3='npy'):
+def merge_layers(name, save_dir, postfix1='jpg', postfix2='tif', postfix3='npy'):
     '''
     Use for presenting single brain images
     :param img_dir: The folder holding the brain images
@@ -108,14 +108,15 @@ def merge_layers(name, postfix1='jpg', postfix2='tif', postfix3='npy'):
     :param plot_bead: if true, the result given by bead_finder will be presented on the image
     :return:
     '''
-    length = len(os.listdir('/home/silasi/ants_data/%s/bead'%name))
+    length = len(os.listdir(os.path.join(save_dir, name, "bead")))
     index = 0
     weight = 0.5
 
     while(True):
-        bead_dir = '/home/silasi/ants_data/%s/post_bead/%d.%s' % (name, index, postfix1)
-        tissue_dir = '/home/silasi/ants_data/%s/post_tissue/%d.%s' % (name, index, postfix2)
-        ann_dir = '/home/silasi/ants_data/%s/atlas/%d.%s' % (name, index, postfix3)
+        bead_dir = os.path.join(save_dir, name, "post_bead", "%d.%s"%(index, postfix1))
+        tissue_dir = os.path.join(save_dir, name, "post_tissue", "%d.%s"%(index, postfix2))
+        ann_dir = os.path.join(save_dir, name, "atlas", "%d.%s"%(index, postfix3))
+
 
         bead_frame = load_img(bead_dir, postfix1)
         transformed_frame = load_img(tissue_dir, postfix2)

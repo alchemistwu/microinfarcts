@@ -204,9 +204,9 @@ def save_pair_images(img_dir, save_dir="/home/silasi/ants_data/name"):
     tif_list = os.listdir(img_dir)
     tif_list.sort(key=z_key)
 
-    f1 = open("../atlas_reference/atlas_plot.pickle", 'rb')
+    f1 = open(os.path.join("..", "atlas_reference", "atlas_plot.pickle"), 'rb')
     atlas_plot_data = pk.load(f1)
-    f2 = open("../atlas_reference/atlas_dict.pickle", 'rb')
+    f2 = open(os.path.join("..", "atlas_reference", "atlas_dict.pickle"), 'rb')
     atlas_dict_data = pk.load(f2)
     shift = calculate_shift(img_dir)
 
@@ -247,8 +247,8 @@ def prepare_atlas():
     Transform the mhd as well as the raw image file into pickle files and also rotate into right direction.
     :return:
     """
-    img = io.imread('../atlas_reference/atlasVolume.mhd', plugin='simpleitk')
-    annotation = io.imread('../atlas_reference/annotation.mhd', plugin='simpleitk')
+    img = io.imread('..' + os.sep + 'atlas_reference' + os.sep + 'atlasVolume.mhd', plugin='simpleitk')
+    annotation = io.imread('..' + os.sep + 'atlas_reference' + os.sep + 'annotation.mhd', plugin='simpleitk')
     assert img.shape == annotation.shape, "Image dose not match the annotation file!"
     atlas_list = []
     ann_list = []
@@ -261,9 +261,9 @@ def prepare_atlas():
         ann90 = np.asarray(ann90)
         ann_list.append(ann90)
 
-    f1 = open("../atlas_reference/atlas_plot.pickle", 'wb')
+    f1 = open(".." + os.sep + "atlas_reference" + os.sep + "atlas_plot.pickle", 'wb')
     pk.dump(atlas_list, f1)
-    f2 = open("../atlas_reference/atlas_dict.pickle", 'wb')
+    f2 = open(".." + os.sep + "atlas_reference" + os.sep + "atlas_dict.pickle", 'wb')
     pk.dump(ann_list, f2)
 
 def summary_single_section(dictionary, mask, annotation):
@@ -309,7 +309,7 @@ def check_create_dirs(save_dir):
     if not os.path.exists(os.path.join(save_dir, 'output')):
         os.mkdir(os.path.join(save_dir, 'output'))
 
-def main(root_dir, save_dir, prepare_atlas_tissue=False, registration=False, app_tran=False, write_summary=False, show=False):
+def main(root_dir, save_dir, prepare_atlas_tissue=False, registration=False, Ants_script="/home/silasi/ANTs/Scripts", app_tran=False, write_summary=False, show=False):
     """
     Show function is not compatible with writing csv funtion. Do one thing at a time.
     :param root_dir:
@@ -337,25 +337,25 @@ def main(root_dir, save_dir, prepare_atlas_tissue=False, registration=False, app
         result_dict = None
         length = len(os.listdir(os.path.join(save_directory, 'atlas')))
         for i in tqdm(range(length)):
-            atlas_dir = os.path.join(save_directory, 'atlas/%d.tif' % i)
-            tissue_dir = os.path.join(save_directory, 'tissue/%d.tif' % i)
+            atlas_dir = os.path.join(save_directory, 'atlas' + os.sep + '%d.tif' % i)
+            tissue_dir = os.path.join(save_directory, 'tissue' + os.sep + '%d.tif' % i)
 
-            output_dir = os.path.join(save_directory, 'output/output_%d_' % i)
+            output_dir = os.path.join(save_directory, 'output' + os.sep + 'output_%d_' % i)
 
             if registration:
-                quick(atlas_dir, tissue_dir, output_dir)
+                quick(atlas_dir, tissue_dir, output_dir, ANTs_script=Ants_script)
 
-            transforms = [os.path.join(save_directory, 'output/output_%d_' % i + '0GenericAffine.mat'),
-                          os.path.join(save_directory, 'output/output_%d_' % i + '1Warp.nii.gz')]
-            bead_dir = os.path.join(save_directory, 'bead/%d.tif' % i)
+            transforms = [os.path.join(save_directory, 'output' + os.sep + 'output_%d_' % i + '0GenericAffine.mat'),
+                          os.path.join(save_directory, 'output' + os.sep + 'output_%d_' % i + '1Warp.nii.gz')]
+            bead_dir = os.path.join(save_directory, 'bead' + os.sep + '%d.tif' % i)
 
             if app_tran:
-                apply_transform(bead_dir, atlas_dir, transforms, os.path.join(save_directory, "post_bead/%d.nii" % i))
-                apply_transform(tissue_dir, atlas_dir, transforms, os.path.join(save_directory, "post_tissue/%d.nii"%i))
+                apply_transform(bead_dir, atlas_dir, transforms, os.path.join(save_directory, "post_bead" + os.sep + "%d.nii" % i))
+                apply_transform(tissue_dir, atlas_dir, transforms, os.path.join(save_directory, "post_tissue" + os.sep + "%d.nii"%i))
 
             if write_summary and not show:
-                bead = load_img(os.path.join(save_directory, "post_bead/%d.nii" % i), 'nii')
-                ann = np.load(os.path.join(save_directory, "ann/%d.npy" % i))
+                bead = load_img(os.path.join(save_directory, "post_bead", "%d.nii"%i), 'nii')
+                ann = np.load(os.path.join(save_directory, "ann", "%d.npy" % i))
                 result_dict = summary_single_section(result_dict, bead, ann)
 
         if write_summary and not show:
