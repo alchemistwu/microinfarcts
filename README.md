@@ -21,7 +21,7 @@
  * 8. `conda install tqdm`
  * 9. `conda install skimage`
  * 10. `pip install nipype`
- * 11. Download and compile ANTs from `https://brianavants.wordpress.com/2012/04/13/updated-ants-compile-instructions-april-12-2012/`
+ * 11. Download and compile ANTs from (https://brianavants.wordpress.com/2012/04/13/updated-ants-compile-instructions-april-12-2012/)
 
 ## 2. Preparatory phase
   * Microinfarcts is based on the result given by imageJ process.
