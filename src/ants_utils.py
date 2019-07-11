@@ -10,7 +10,7 @@ import os
 import shlex
 import subprocess
 
-def quick(dir_fix_image='/home/silasi/ants_data/nrrd/0.tif', dir_moving_img='/home/silasi/ants_data/tissue/0.tif', dir_output='/home/silasi/ants_data/output_'):
+def quick(dir_fix_image='/home/silasi/ants_data/nrrd/0.tif', dir_moving_img='/home/silasi/ants_data/tissue/0.tif', dir_output='/home/silasi/ants_data/output_', ANTs_script="/home/silasi/ANTs/Scripts/"):
     """
     Ants registration function
     :param dir_fix_image:
@@ -25,7 +25,7 @@ def quick(dir_fix_image='/home/silasi/ants_data/nrrd/0.tif', dir_moving_img='/ho
     reg.inputs.output_prefix = dir_output
     reg.inputs.transform_type = 's'
     reg.inputs.num_threads = 16
-    command = os.path.join("/home/silasi/ANTs/Scripts/", reg.cmdline)
+    command = os.path.join(ANTs_script, reg.cmdline)
     args = shlex.split(command)
     p = subprocess.Popen(args)
     p.wait()

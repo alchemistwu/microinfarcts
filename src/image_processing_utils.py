@@ -325,37 +325,37 @@ def main(root_dir, save_dir, prepare_atlas_tissue=False, registration=False, app
     name_list = os.listdir(root_dir)
     for name in name_list:
         img_dir = os.path.join(root_dir, name, "3 - Processed Images", "7 - Counted Reoriented Stacks Renamed")
-        save_dir = os.path.join(save_dir, name)
-        check_create_dirs(save_dir)
+        save_directory = os.path.join(save_dir, name)
+        check_create_dirs(save_directory)
 
-        save_bead_mask(save_dir, os.path.join(root_dir, name), show_circle=show)
+        save_bead_mask(save_directory, os.path.join(root_dir, name), show_circle=show)
 
 
         if prepare_atlas_tissue:
-            save_pair_images(img_dir, save_dir=save_dir)
+            save_pair_images(img_dir, save_dir=save_directory)
 
         result_dict = None
-        length = len(os.listdir(os.path.join(save_dir, 'atlas')))
+        length = len(os.listdir(os.path.join(save_directory, 'atlas')))
         for i in tqdm(range(length)):
-            atlas_dir = os.path.join(save_dir, 'atlas/%d.tif' % i)
-            tissue_dir = os.path.join(save_dir, 'tissue/%d.tif' % i)
+            atlas_dir = os.path.join(save_directory, 'atlas/%d.tif' % i)
+            tissue_dir = os.path.join(save_directory, 'tissue/%d.tif' % i)
 
-            output_dir = os.path.join(save_dir, 'output/output_%d_' % i)
+            output_dir = os.path.join(save_directory, 'output/output_%d_' % i)
 
             if registration:
                 quick(atlas_dir, tissue_dir, output_dir)
 
-            transforms = [os.path.join(save_dir, 'output/output_%d_' % i + '0GenericAffine.mat'),
-                          os.path.join(save_dir, 'output/output_%d_' % i + '1Warp.nii.gz')]
-            bead_dir = os.path.join(save_dir, 'bead/%d.tif' % i)
+            transforms = [os.path.join(save_directory, 'output/output_%d_' % i + '0GenericAffine.mat'),
+                          os.path.join(save_directory, 'output/output_%d_' % i + '1Warp.nii.gz')]
+            bead_dir = os.path.join(save_directory, 'bead/%d.tif' % i)
 
             if app_tran:
-                apply_transform(bead_dir, atlas_dir, transforms, os.path.join(save_dir, "post_bead/%d.nii" % i))
-                apply_transform(tissue_dir, atlas_dir, transforms, os.path.join(save_dir, "post_tissue/%d.nii"%i))
+                apply_transform(bead_dir, atlas_dir, transforms, os.path.join(save_directory, "post_bead/%d.nii" % i))
+                apply_transform(tissue_dir, atlas_dir, transforms, os.path.join(save_directory, "post_tissue/%d.nii"%i))
 
             if write_summary and not show:
-                bead = load_img(os.path.join(save_dir, "post_bead/%d.nii" % i), 'nii')
-                ann = np.load(os.path.join(save_dir, "ann/%d.npy" % i))
+                bead = load_img(os.path.join(save_directory, "post_bead/%d.nii" % i), 'nii')
+                ann = np.load(os.path.join(save_directory, "ann/%d.npy" % i))
                 result_dict = summary_single_section(result_dict, bead, ann)
 
         if write_summary and not show:
@@ -364,7 +364,7 @@ def main(root_dir, save_dir, prepare_atlas_tissue=False, registration=False, app
                 csv_dict["label"].append(key)
                 csv_dict["number"].append(result_dict[key])
             df = pd.DataFrame(csv_dict)
-            df.to_csv(os.path.join(save_dir, "summary.csv"))
+            df.to_csv(os.path.join(save_directory, "summary.csv"))
 
         if show:
             merge_layers(name, 'nii', 'nii', 'tif')
