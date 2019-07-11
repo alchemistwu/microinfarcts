@@ -4,15 +4,14 @@ Email: jwu220@uottawa.ca
 github: alchemistWu0521@gmail.com
 Organization: Silasi Lab
 '''
-import pandas as pd
 from matplotlib import pyplot as plt
 import random
 import os
 import cv2
-from src.present import show_img
+from present import show_img
 import numpy as np
 import pandas as pd
-from src.tifffile import imsave
+from tifffile import imsave
 
 def get_blank_canvas(img_real):
     '''

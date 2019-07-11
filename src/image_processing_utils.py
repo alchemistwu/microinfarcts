@@ -12,13 +12,13 @@ import cv2
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-from src.tifffile import imsave
+from tifffile import imsave
 import pickle as pk
 from tqdm import tqdm
 import skimage.io as io
-from src.present import show_img, merge_layers, load_img
-from src.bead_finder import save_bead_mask
-from src.ants_utils import quick, apply_transform
+from present import show_img, merge_layers, load_img
+from bead_finder import save_bead_mask
+from ants_utils import quick, apply_transform
 
 def is_in_center(centerPonit, real_img):
     '''
@@ -270,7 +270,7 @@ def summary_single_section(dictionary, mask, annotation):
     if dictionary is None:
         dictionary = {}
     mask = np.asarray(mask, dtype=np.uint16)
-    result = cv2.bitwise_and(ann, mask)
+    result = cv2.bitwise_and(annotation, mask)
     result_list = np.where(result > 0)
     x_list = result_list[0].tolist()
     y_list = result_list[1].tolist()
@@ -326,8 +326,10 @@ def main(root_dir, save_dir, prepare_atlas_tissue=False, registration=False, app
     for name in name_list:
         img_dir = os.path.join(root_dir, name, "3 - Processed Images", "7 - Counted Reoriented Stacks Renamed")
         save_dir = os.path.join(save_dir, name)
-        save_bead_mask(save_dir, os.path.join(root_dir, name), show_circle=show)
         check_create_dirs(save_dir)
+
+        save_bead_mask(save_dir, os.path.join(root_dir, name), show_circle=show)
+
 
         if prepare_atlas_tissue:
             save_pair_images(img_dir, save_dir=save_dir)
