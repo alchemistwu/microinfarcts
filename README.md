@@ -5,7 +5,7 @@ Microinfarcts is a project for loacting the real location of beads inside the br
  * a. `conda install pandas`
  * b. `conda install shlex`
  * c. `conda install subprocess`
- * d. `conda install -c conda-forge ffmpeg'
+ * d. `conda install -c conda-forge ffmpeg`
  * e. `conda install -c conda-forge opencv`
  * f. `conda install matplotlib`
  * g. `conda install pickle`
