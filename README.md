@@ -27,10 +27,16 @@
 ## 2. Preparatory phase
   * Microinfarcts is based on the result given by imageJ process. The input data should be the result of imageJ process.
   * For the input raw data, the whole directory structure should be:
-  * 1. `root directory/individual brain/3 - Processed Images/7 - Counted Reoriented Stacks Renamed/*imgs`
-  * 2. `root directory/individual brain/5 - Data/[brain id] - Manual Bead Location Data v0.1.4 - Dilation Factor 0.csv`
+  * 1. `root directory/[brain id](individual brain)/3 - Processed Images/7 - Counted Reoriented Stacks Renamed/*imgs`
+  * 2. `root directory/[brain id](individual brain)/5 - Data/[brain id] - Manual Bead Location Data v0.1.4 - Dilation Factor 0.csv`
   * Note: The first directory should contain the brain images aligned by imageJ. And under the second one there should be a csv containing the human labeled micro infarcts loaction.
-  * After downloading as well as compiling ANTs, you should find the dirctory of `antsRegistrationSyNQuick.sh` under ANTs `Scripts` folder. Take this PC as an example, it is `/home/silasi/ANTs/Scripts/antsRegistrationSyNQuick.sh`. Then the folder containing `antsRegistrationSyNQuick.sh`, that is `/home/silasi/ANTs/Scripts/` which will be used as the parameter `--ant` of the whole project.
+  * After downloading as well as compiling ANTs, you should find the dirctory of `antsRegistrationSyNQuick.sh` under ANTs `Scripts` folder. Take this PC as an example, it is `/home/silasi/ANTs/Scripts/antsRegistrationSyNQuick.sh`. Then the folder containing `antsRegistrationSyNQuick.sh`, that is `/home/silasi/ANTs/Scripts/` which will be used as the parameter `--ant` of the whole project. Here we leave it as [Script folder] for short and for future use.
 
 ## 3. User guide
-  * 
+  * 1. Simple guide.
+      
+      * 1. [Input directory]: The folder holds individual brains folders.
+      * 2. [Output directory]: A empty folder you would like to save the result.
+      * 3. `cd microinfarcts/src`
+      * 4. `python main.py --r [Input directory] --s [Output directory] --ant [Script folder]`
+      * 5. Microinfarcts script will run through brains. It will take a while to finish the whole process. After running, there will be a csv file named as `summary.csv` under the `[output directory]/[brain id]`.
