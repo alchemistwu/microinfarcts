@@ -11,16 +11,17 @@
     * `microinfarcts/atlas_reference/atlasVolume.raw`
 
 ## 1. Install dependencies
- * a. `conda install pandas`
- * b. `conda install shlex`
- * c. `conda install subprocess`
- * d. `conda install -c conda-forge ffmpeg`
- * e. `conda install -c conda-forge opencv`
- * f. `conda install matplotlib`
- * g. `conda install pickle`
- * h. `conda install tqdm`
- * i. `conda install skimage`
- * k. `pip install nipype`
+ * 1. `conda install pandas`
+ * 2. `conda install shlex`
+ * 3. `conda install subprocess`
+ * 4. `conda install -c conda-forge ffmpeg`
+ * 5. `conda install -c conda-forge opencv`
+ * 6. `conda install matplotlib`
+ * 7. `conda install pickle`
+ * 8. `conda install tqdm`
+ * 9. `conda install skimage`
+ * 10. `pip install nipype`
+ * 11. Download and compile ANTs from `https://brianavants.wordpress.com/2012/04/13/updated-ants-compile-instructions-april-12-2012/`
 
 ## 2. Preparatory phase
   * Microinfarcts is based on the result given by imageJ process.
