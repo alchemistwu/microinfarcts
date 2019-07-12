@@ -34,9 +34,9 @@
 
 ## 3. User guide
   * 1. Simple guide.
-      
-      * 1. [Input directory]: The folder holds individual brains folders.
-      * 2. [Output directory]: A empty folder you would like to save the result.
-      * 3. `cd microinfarcts/src`
-      * 4. `python main.py --r [Input directory] --s [Output directory] --ant [Script folder]`
-      * 5. Microinfarcts script will run through brains. It will take a while to finish the whole process. After running, there will be a csv file named as `summary.csv` under the `[output directory]/[brain id]`.
+      * 1. Write a summary:
+         * 1. [Input directory]: The folder holds individual brains folders.
+         * 2. [Output directory]: A empty folder you would like to save the result.
+         * 3. `cd microinfarcts/src`
+         * 4. `python main.py --r [Input directory] --s [Output directory] --ant [Script folder]`
+         * 5. Microinfarcts script will run through brains. It will take a while to finish the whole process. After running, there will be a csv file named as `summary.csv` under the `[output directory]/[brain id]`.
