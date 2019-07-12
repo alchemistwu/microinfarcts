@@ -332,6 +332,7 @@ def main(root_dir, save_dir, prepare_atlas_tissue=False, registration=False, Ant
 
 
         if prepare_atlas_tissue:
+            prepare_atlas()
             save_pair_images(img_dir, save_dir=save_directory)
 
         result_dict = None
