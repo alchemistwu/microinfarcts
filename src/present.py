@@ -62,19 +62,19 @@ def show_img(img, name, introduction=False):
     img_show = img.copy()
     img_show = cv2.resize(img_show, (int(img_show.shape[1] * 0.5), int(img_show.shape[0] * 0.5)))
     if introduction:
-        cv2.putText(img_show, name, (50, 30), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1,
+        cv2.putText(img_show, name, (20, 30), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=0.5,
                     color=(255, 255, 255))
-        cv2.putText(img_show, 'q: reduce weight', (50, 50), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1,
+        cv2.putText(img_show, 'q: reduce weight', (20, 50), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=0.5,
                     color=(255, 255, 255))
-        cv2.putText(img_show, 'e: increase weight', (50, 100), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1,
+        cv2.putText(img_show, 'e: increase weight', (20, 70), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=0.5,
                     color=(255, 255, 255))
-        cv2.putText(img_show, 'a: previous frame', (50, 150), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1,
+        cv2.putText(img_show, 'a: previous frame', (20, 90), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=0.5,
                     color=(255, 255, 255))
-        cv2.putText(img_show, 'd: next frame', (50, 200), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1,
+        cv2.putText(img_show, 'd: next frame', (20, 110), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=0.5,
                     color=(255, 255, 255))
-        cv2.putText(img_show, 's: quit', (50, 250), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1,
+        cv2.putText(img_show, 's: quit', (20, 130), fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=0.5,
                     color=(255, 255, 255))
-    cv2.imshow('img_show', img_show)
+    cv2.imshow('Micro infarcts', img_show)
     key = cv2.waitKey()
     return key
 
