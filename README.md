@@ -40,3 +40,16 @@
         * 3. `cd microinfarcts/src`
         * 4. `python main.py --r [Input directory] --s [Output directory] --ant [Script folder]`
         * 5. Microinfarcts script will run through brains. It will take a while to finish the whole process. After running, there will be a csv file named as `summary.csv` under the `[output directory]/[brain id]`.
+      * Show in image:
+        * 1. First three steps are the same as `write a summary`.
+        * 2. If you have already gone through the previous step then the command should be `python main.py --r [Input directory] --s [Output directory] --ant [Script folder] --p False --re False --a True --w False --sh True` 
+        * 3. Then it will show up a window presenting the result.
+  * 2. Detailed guide.
+      * `--r`: Root directory or input directory, indicates the root directory mentioned in `2.Preparatory phase`, which holds individual brains.
+      * `--s`: Save directory or output directory, an empty folder to save your middle results and final results.
+      * `--ant`: The directory to script folder under ANTs directory.
+      * `--p`: Read the atlas file and annotation file and transfer them into .pickle data. Default is `True`, if you have already finshed one whole process before or have those pickle file saved under `atlas_reference` folder, then you may set this parameter as `False` to skip it and save time.
+      * `--re`: Use ANTs as backend to align the brain into standard Allen atlas. Default is `True`, Similar to the previous parameter, if you already have the middle result saved in `[Output directory]/output` folder, then you may set it as `False `to skip it and save time.
+      * `--a`: Apply the trasform matrix calculated in ANTs registration on mask of micro infarcts as well as the tissue image. Default is `True`. Please always set it as `True` to avoide hindering the next process.
+      * `--w`: Write the registraion result into a csv file. This function is not compatible with `show` function. So the parameter `--w` cannot be set as `True` while `--sh` is already set to `True`. 
+      * `--sh`: Show the alignment and registration result in a opencv window. This function is not compatible with `write_summary` function. So the parameter `--sh` cannot be set as `True` while `--w` is already set to `True`. 
