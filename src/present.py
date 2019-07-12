@@ -117,7 +117,6 @@ def merge_layers(name, save_dir, postfix1='jpg', postfix2='tif', postfix3='npy')
         tissue_dir = os.path.join(save_dir, name, "post_tissue", "%d.%s"%(index, postfix2))
         ann_dir = os.path.join(save_dir, name, "atlas", "%d.%s"%(index, postfix3))
 
-
         bead_frame = load_img(bead_dir, postfix1)
         transformed_frame = load_img(tissue_dir, postfix2)
         ann_frame = load_img(ann_dir, postfix3)

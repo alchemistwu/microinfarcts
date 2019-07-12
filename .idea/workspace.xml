@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e10a9f20-1ea2-4fb3-a425-655bf40280bf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/image_processing_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/image_processing_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/present.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/present.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +18,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ants_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
+            <state relative-caret-position="600">
               <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
               <folding>
                 <element signature="e#112#167#0" expanded="true" />
@@ -27,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+            <state relative-caret-position="435">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -39,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/image_processing_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="339" column="37" lean-forward="true" selection-start-line="339" selection-start-column="37" selection-end-line="339" selection-end-column="37" />
+            <state relative-caret-position="441">
+              <caret line="376" column="41" lean-forward="true" selection-start-line="376" selection-start-column="41" selection-end-line="376" selection-end-column="41" />
               <folding>
                 <element signature="e#327#346#0" expanded="true" />
               </folding>
@@ -51,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/present.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="119" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="195">
+              <caret line="110" column="49" selection-start-line="110" selection-start-column="41" selection-end-line="110" selection-end-column="49" />
               <folding>
                 <element signature="e#112#122#0" expanded="true" />
               </folding>
@@ -72,6 +75,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>/</find>
+      <find>merge_layers</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,11 +103,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="270" />
-    <option name="y" value="231" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="772" />
+    <option name="y" value="90" />
     <option name="width" value="1656" />
-    <option name="height" value="791" />
+    <option name="height" value="763" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -210,10 +214,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="772" y="90" width="1656" height="763" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17412664" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19534598" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -269,7 +273,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ants_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
+        <state relative-caret-position="600">
           <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
           <folding>
             <element signature="e#112#167#0" expanded="true" />
@@ -277,30 +281,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/present.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
-          <folding>
-            <element signature="e#112#122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+        <state relative-caret-position="435">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/present.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="110" column="49" selection-start-line="110" selection-start-column="41" selection-end-line="110" selection-end-column="49" />
+          <folding>
+            <element signature="e#112#122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/image_processing_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="339" column="37" lean-forward="true" selection-start-line="339" selection-start-column="37" selection-end-line="339" selection-end-column="37" />
+        <state relative-caret-position="441">
+          <caret line="376" column="41" lean-forward="true" selection-start-line="376" selection-start-column="41" selection-end-line="376" selection-end-column="41" />
           <folding>
             <element signature="e#327#346#0" expanded="true" />
           </folding>

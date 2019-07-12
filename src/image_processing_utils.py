@@ -321,6 +321,7 @@ def main(root_dir, save_dir, prepare_atlas_tissue=False, registration=False, Ant
     :param show:
     :return:
     """
+
     assert not (show and write_summary), "Show function is not compatible with sumarry function"
     name_list = os.listdir(root_dir)
     for name in name_list:
@@ -368,7 +369,7 @@ def main(root_dir, save_dir, prepare_atlas_tissue=False, registration=False, Ant
             df.to_csv(os.path.join(save_directory, "summary.csv"))
 
         if show:
-            merge_layers(name, 'nii', 'nii', 'tif')
+            merge_layers(name, save_dir, 'nii', 'nii', 'tif')
 
 
 if __name__ == '__main__':
