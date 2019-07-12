@@ -3,7 +3,7 @@
 * First human labeled position of micro infarcts inside the brain images will be clustered and organized, after some calculation they will be transformed into a list of masks containing the real location of the micro infarcts. After that the transform matrix achieved in aligning the brain into atlas will be applied on the masks. Then the masks as well as the Allen annotaion files will be involved in coming processes and registered into the standard Allen atlas. Finally you will have two optional ways to view your result.
 * 1. A csv file indicating the number of micro infarcts located in different brain regions.
 * 2. A opencv window showing the standard atlas, symmerically normalized brain images and the location of the micro infarcts. 
-![opencv window](https://github.com/SilasiLab/microinfarcts/blob/master/pics/show.png)
+* ![opencv window](https://github.com/SilasiLab/microinfarcts/blob/master/pics/show.png)
 * The reference atlas comes from Allen Atlas organization. You can find reference data on google drive link attached here:(https://drive.google.com/drive/folders/10MqL8BXkfRsjLgWRuoxJUuZzH9AuWIOe?usp=sharing)
 * After downloading the reference file, you need to copy it into `atlas_reference` folder.
 * So the whole structure of the project should be:
