@@ -1,6 +1,6 @@
 # Microinfarcts
 * Microinfarcts is a project for loacting the real location of beads inside the brain and use ANTs to align the brain into Allen atlas.
-* The reference atlas is taken from Allen Atlas organization. You can find reference data on google drive link attached here:(pass)
+* The reference atlas is taken from Allen Atlas organization. You can find reference data on google drive link attached here:(https://drive.google.com/drive/folders/10MqL8BXkfRsjLgWRuoxJUuZzH9AuWIOe?usp=sharing)
 * After downloading the reference file, you need to copy it into `atlas_reference` folder.
 * So the whole structure of the project should be:
     * `microinfarcts/src`
@@ -34,9 +34,9 @@
 
 ## 3. User guide
   * 1. Simple guide.
-      
-      * 1. [Input directory]: The folder holds individual brains folders.
-      * 2. [Output directory]: A empty folder you would like to save the result.
-      * 3. `cd microinfarcts/src`
-      * 4. `python main.py --r [Input directory] --s [Output directory] --ant [Script folder]`
-      * 5. Microinfarcts script will run through brains. It will take a while to finish the whole process. After running, there will be a csv file named as `summary.csv` under the `[output directory]/[brain id]`.
+      * Write a summary:
+        * 1. [Input directory]: The folder holds individual brains folders.
+        * 2. [Output directory]: A empty folder you would like to save the result.
+        * 3. `cd microinfarcts/src`
+        * 4. `python main.py --r [Input directory] --s [Output directory] --ant [Script folder]`
+        * 5. Microinfarcts script will run through brains. It will take a while to finish the whole process. After running, there will be a csv file named as `summary.csv` under the `[output directory]/[brain id]`.
