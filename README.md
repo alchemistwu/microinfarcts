@@ -1,6 +1,6 @@
 # Microinfarcts
 * Microinfarcts is a project for loacting the real location of beads inside the brain and use ANTs to align the brain into Allen atlas.
-* The reference atlas is taken from Allen Atlas organization. You can find reference data on google drive link attached here:(pass)
+* The reference atlas is taken from Allen Atlas organization. You can find reference data on google drive link attached here:(https://drive.google.com/drive/folders/10MqL8BXkfRsjLgWRuoxJUuZzH9AuWIOe?usp=sharing)
 * After downloading the reference file, you need to copy it into `atlas_reference` folder.
 * So the whole structure of the project should be:
     * `microinfarcts/src`
